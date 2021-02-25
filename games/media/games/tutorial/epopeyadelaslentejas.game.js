@@ -29,21 +29,15 @@ undum.game.slideUpSpeed = 500
 /* The situations that the game can be in. Each has a unique ID. */
 undum.game.situations = {
     start: new undum.SimpleSituation(
-        "<h1>Starting Out with Undum</h1>\
-        <img src='media/games/tutorial/woodcut1.png' class='float_right'>\
-        <p>Welcome to the Undum tutorial. Undum is a tool for writing\
-        hypertext interactive fiction. It has some unique features\
-        and a visual design that encourages narrative games.</p>\
-        \
-        <p>Hypertext interactive fiction is the digital equivalent of the\
-        Choose Your Own Adventure (CYOA) books that were popular in the\
-        1980s. The story is told in chunks, and you select from a range\
-        of options to move it forward. Unlike the book form, however, the\
-        digital form gives you far more flexibility to tell rich stories\
-        and introduce more interesting game elements.</p>\
-        \
-        <p class='transient'>Click <a href='hub'>this link to\
-        continue...</a></p>"
+        "<h1>Un día más en tu mísera vida</h1>\
+        <img src='media/games/tutorial/suenio.png' class='float_right'>\
+        <p>Te acabas de despertar y tienes tanto sueño que no sabes ni dónde estás\
+		(es lo que tiene quedarse hasta las 4 programando sin hacer caso a Víctor).</p>\
+        <p> De repente escuchas un ruido atronador proviniente de tu madre.\
+		Como ya te ha pasado infinidad de veces, intuyes que vas a tener que hacer algo\
+		si quieres seguir con vida...\
+		</p>\
+        <p class='transient'>Click <a href='hub'>aquí para continuar.</a></p>"
     ),
 
     // NB: The 'hub' situation which is the main list of topics, is
@@ -59,10 +53,59 @@ undum.game.situations = {
             system.write($("#s_situations").html());
         },
         tags: ["topic"],
-        optionText: "What Undum Games are Made Of",
+        optionText: "Obedeces las órdenes y vas a comprar",
         displayOrder: 1
     }),
-    todo: new undum.SimpleSituation(
+	comprar: new undum.SimpleSituation(
+        "<p>Pese a que quieres mucho a tu amigo y te cae genial\
+        no puedes permitir que nada se imponga en tu camino hacia la tienda\
+        para comprar.\
+        </p>\
+		<img src='media/games/tutorial/punio.png' class='float_right'>\
+        <p>Incluso diciéndole que no podías hacer nada hasta que acabases tus tareas\
+		sigue insistiéndote en ese maravilloso plan así que tienes que pensar en una forma\
+		de librarte de él.\
+		</p>\
+		<p>Sientes el espíritu de Mike Tyson apoderándose de ti y le sueltas un uppercut\
+		que deja a tu amigo KO.\
+		</p>\
+		<p>Ahora sí que puedes <a href='tienda'>seguir tu camino hacia la tienda.</a>\
+		</p>",
+    ),
+	tienda: new undum.SimpleSituation(
+        "<p>Aunque parecía imposible, por fin estás en la tienda y con las ansiadas lentejas\
+        en tus manos.\
+        </p>\
+        <p>Una vez has pagado y vas a volver, decides escuchar algo en el móvil para amenizar el camino.\
+		Puedes <a href='./suerte-boost'>escuchar lo último que ha salido en Musicfy</a> o \
+		<a href='./suerte-boost'>prácticar tus mejores rezos mientras escuchas RadioMaría.</a>\
+		</p>\
+		<p>Conforme te vas acercando a tu casa puedes oler ese magnífico guiso que se está preparando\
+		a fuego lento así que, sin pensarlo dos veces, <a href='casa'>entras en casa.</a>\
+		</p>",
+		{
+            actions: {
+				"suerte-boost": function(character, system, action) {
+                    system.setQuality("suerte", character.qualities.suerte+1);
+				}
+			}
+        }
+    ),
+	casa: new undum.SimpleSituation(
+        "<p>Cuando abres la puerta, ves que tu madre viene corriendo en tu dirección rezando para\
+        que hubieses comprado las lentejas correctas.\
+        </p>\
+        <p>Al darselas, empieza a llorar. No sabes qué hacer, te sientes nervioso.\
+		</p>\
+		<p>Tu querida madre levanta la cabeza y, para tu sorpresa, ¡está llorando de alegría!.\
+		Te da un abrazo mientras te dice que eres el mejor hijo del mundo y que sin tí no hubiese\
+		sido posible hacer la comida.\
+		</p>\
+		<p>¿Es así como se sienten los dioses? Tal vez en tu vida diaria seas un fracaso pero hoy,\
+		<strong>has salvado el mundo.</strong>\
+		</p>",
+    ),
+    amigo: new undum.SimpleSituation(
         "<p>Two things can happen in a situation. The character either\
         <a href='links'>leaves</a> the situation and enters another one, or\
         they carry out some <a href='./do-something'>action</a>. Actions may\
@@ -131,7 +174,7 @@ undum.game.situations = {
         about these links.\
         Let's return to the <a href='hub'>topic list</a>.</p>",
         {
-            heading: "Disappearing Content",
+            heading: "Dices que pasas de rollos y te quedas en casa",
             diplayOrder: 2,
             tags: ["topic"]
         }
@@ -176,7 +219,7 @@ undum.game.situations = {
         {
             tags: ["topic"],
             displayOrder: 3,
-            heading: "Different Kinds of Links"
+            heading: "Dices que sí pero que luego más tarde"
         }
     ),
     oneshot: new undum.SimpleSituation(
@@ -217,16 +260,16 @@ undum.game.situations = {
         <a href='quality-types'>go to the next situation</a>, keep your\
         eyes on the character panel. You'll notice I'll give you a boost to\
         your stamina quality. This process is animated and highlighted to\
-        draw your attention to it. You could also get a boost of skill\
-        by carrying out <a href='./skill-boost'>this action</a> as many\
+        draw your attention to it. You could also get a boost of suerte\
+        by carrying out <a href='./suerte-boost'>this action</a> as many\
         times as you like.</p>",
         {
             heading: "Qualities and the Character",
             tags: ["topic"],
             displayOrder: 4,
             actions: {
-                "skill-boost": function(character, system, action) {
-                    system.setQuality("skill", character.qualities.skill+1);
+                "suerte-boost": function(character, system, action) {
+                    system.setQuality("suerte", character.qualities.suerte+1);
                 }
             },
             exit: function(character, system, to) {
@@ -352,13 +395,13 @@ undum.game.situations = {
         {
             tags: ["example"],
             enter: function(character, system, from) {
-                system.animateQuality("luck", character.qualities.luck+1)
+                system.animateQuality("suerte", character.qualities.suerte+1)
                 system.doLink('example-choices');
             },
             optionText: "Boost Your Luck",
             displayOrder: 1,
             canView: function(character, system, host) {
-                return character.qualities.luck < 4;
+                return character.qualities.suerte < 4;
             }
         }
     ),
@@ -368,29 +411,29 @@ undum.game.situations = {
         {
             tags: ["example"],
             enter: function(character, system, from) {
-                system.animateQuality("luck", character.qualities.luck-1)
+                system.animateQuality("suerte", character.qualities.suerte-1)
                 system.doLink('example-choices');
             },
             optionText: "Reduce Your Luck",
             displayOrder: 2,
             canView: function(character, system, host) {
-                return character.qualities.luck > -4;
+                return character.qualities.suerte > -4;
             }
         }
     ),
     "high-luck-only": new undum.SimpleSituation(
-        "<p>Your luck is higher than 'fair'. The link to this \
-        situation would not\
-        have appeared if it were lower.</p>",
+        "<p>¡Los rezos funcionan! No se sabe que dios te ha ayudado pero la fortuna está\
+        de tu parte. Tu madre se siente más generosa que nunca y permite a su fiel secuaz\
+        quedarse con la vuelta de lo que sobró en la tienda.</p>",
         {
             tags: ["example"],
             enter: function(character, system, from) {
                 system.doLink('example-choices');
             },
-            optionText: "High Luck Option",
+            optionText: "Opción de buena suerte",
             displayOrder: 3,
             canView: function(character, system, host) {
-                return character.qualities.luck > 0;
+                return character.qualities.suerte >= 1;
             }
         }
     ),
@@ -446,8 +489,8 @@ undum.game.start = "start";
  * possess. We don't have to be exhaustive, but if we miss one out then
  * that quality will never show up in the character bar in the UI. */
 undum.game.qualities = {
-    skill: new undum.IntegerQuality(
-        "Skill", {priority:"0001", group:'stats'}
+    suerte: new undum.IntegerQuality(
+        "Suerte", {priority:"0001", group:'stats'}
     ),
     stamina: new undum.NumericQuality(
         "Stamina", {priority:"0002", group:'stats'}
@@ -480,7 +523,7 @@ undum.game.qualityGroups = {
 /* This function gets run before the game begins. It is normally used
  * to configure the character at the start of play. */
 undum.game.init = function(character, system) {
-    character.qualities.skill = 12;
+    character.qualities.suerte = 0;
     character.qualities.stamina = 12;
     character.qualities.luck = 0;
     character.qualities.novice = 1;
