@@ -202,43 +202,18 @@
            data-option-text="View Topic List">
         <h1 class="transient">Opciones</h1>
         <p class="transient">Tu madre te dice que como seguro que no tienes nada que hacer (pobre ilusa,
-		como si los informáticos pudiesemos parar) salgas a comprar lentejas. Llegó el momento de tomar una decisión.	
+		como si los informáticos pudiésemos parar) salgas a comprar lentejas. Llegó el momento de tomar una decisión.	
 		</p>
       </div>
 
-      <div id="implicit" class="situation" data-tags="topic"
-           data-heading="Entras a casa" data-display-order="7"
+      <div id="implicit" class="situation"
+           data-heading="Prueba final"
            data-choices="#example">
-        <p>When you're writing an Undum game, you often need certain
-          options to be available only when certain conditions hold. You
-          might have an option to remove a secret panel in a haunted
-          house, but that should only be visible if the character knows
-          where it is. If options are available in lots of situations, it
-          can be very difficult to keep track of what options are
-          allowed, and to produce just the right list of choices.</p>
-        <p>To help with this, Undum can generate a list of situation
-          links for you. It does this in three steps. Firstly, each
-          situation can be given one or more tags, this allows you to
-          easily ask for links to all situations with the 'in-hallway'
-          tag, for example. Secondly, situations can have
-          a <em>canView</em> method, which gets to decide whether that
-          situation should appear. That method can look at the
-          current state of the character to decide whether to appear
-          or not. Thirdly, <em>SimpleSituation</em>s have a <em>choices</em>
-          option. If it is set to one or more tags, it handles the building
-          of the choice list.</p>
-        <p>You've seen this already in the topic list. The topic list
-          is generated automatically. All of the situations in the topic
-          list are always available, however.
-          <span class="transient">So here is an example of
-          automatic options that may change:</span></p>
+          <span class="transient">Las decisiones que has tomado a lo largo de tu camino desembocan
+		  en una de estas dos opciones: </span></p>
       </div>
 
-      <div id="example-choices" class="situation" data-choices="#example">
-        <p class="transient">You can return to the
-          <a href='hub'>Topic List</a> or choose another option from
-          this example:</p>
-      </div>
+
     </div>
 
     <!-- Load the libraries we depend on -->
