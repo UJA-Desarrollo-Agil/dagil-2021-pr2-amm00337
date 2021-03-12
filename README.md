@@ -17,9 +17,11 @@ La URL del tablero de Trello usado es: <https://trello.com/b/2FFhO59X/pr%C3%A1ct
 *Captura del tablero de Trello al iniciar la práctica*
 
 ![Captura2](https://github.com/UJA-Desarrollo-Agil/dagil-2021-pr2-amm00337/blob/master/capturas_practica2/2.PNG)
+
 *Captura de Telegram vinculado con Trello*
 
 ![Captura3](https://github.com/UJA-Desarrollo-Agil/dagil-2021-pr2-amm00337/blob/master/capturas_practica2/3.PNG)
+
 *Captura de Telegram vinculado con GitHub*
 
 ![Captura4](https://github.com/UJA-Desarrollo-Agil/dagil-2021-pr2-amm00337/blob/master/capturas_practica2/captura28-02-21.PNG)
