@@ -14,7 +14,7 @@ La URL del tablero de Trello usado es: <https://trello.com/b/2FFhO59X/pr%C3%A1ct
 
 
 ![Captura1](https://github.com/UJA-Desarrollo-Agil/dagil-2021-pr2-amm00337/blob/master/capturas_practica2/1.PNG)
-![Captura2](https://raw.githubusercontent.com/amm00337/dagil-2021-pr2-amm00337/blob/master/capturas_practica2/2.PNG)
-![Captura3](/dagil-2021-pr2-amm00337/capturas_practica2/3.png)
-![Captura4](/dagil-2021-pr2-amm00337/capturas_practica2/Captura09-03-21.png)
-![Captura5](/dagil-2021-pr2-amm00337/capturas_practica2/captura28-02-21.png)
+![Captura2](https://github.com/UJA-Desarrollo-Agil/dagil-2021-pr2-amm00337/blob/master/capturas_practica2/2.PNG)
+![Captura3](https://github.com/UJA-Desarrollo-Agil/dagil-2021-pr2-amm00337/blob/master/capturas_practica2/3.png)
+![Captura4](https://github.com/UJA-Desarrollo-Agil/dagil-2021-pr2-amm00337/blob/master/capturas_practica2/Captura09-03-21.png)
+![Captura5](https://github.com/UJA-Desarrollo-Agil/dagil-2021-pr2-amm00337/blob/master/capturas_practica2/captura28-02-21.png)
